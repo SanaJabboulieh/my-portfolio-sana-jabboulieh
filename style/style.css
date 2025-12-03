@@ -1,0 +1,350 @@
+:root{
+    --main-color:#25282B;
+    --sec-color:#FDC435;
+    --text-color:#828282;
+    
+}
+@keyframes fadeIn {
+        0% {opacity: 0;}
+        50% {opacity: 5;}
+    }
+    /* Optional: add a little pop with keyframes */
+@keyframes popIn {
+  from { transform: translateY(18px) scale(0.995); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #e5e5e5;
+}
+a{
+    text-decoration: none;
+    color: var(--main-color);
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+/* navbar section styling */
+.navbar nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 100px 12px 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #FDC435;
+}
+.navbar nav .logo{
+    width: 60px;
+height: 60px;
+}
+
+.navbar nav .nav-list{
+    list-style: none;
+    display: flex;
+    gap: 48px;
+    font-size: 18px;
+}
+.navbar nav .nav-list li a{
+    font-family: "Playfair Display", serif;
+        font-weight: 600;
+  transition: all 0.3s ease;
+}
+.navbar nav .nav-list li a:hover{
+    cursor: pointer;
+    color: var(--text-color);
+}
+/*end navbar section styling */
+/* main section styling */
+.main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 110px;
+    
+}
+.main .intro-main {
+    width: 50%;
+    padding: 54px 112px 54px 100px;
+    h1{
+        font-size: 50px;
+        padding-bottom: 32px;
+    }
+    h2{
+        font-family: "Nunito", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        color: var(--text-color);
+    }
+
+    p{
+        color: var(--sec-color);
+        font-family: "Nunito", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        padding-bottom: 12px;
+    }
+    button{
+        margin-top: 24px;
+        padding: 12px 24px 12px 24px;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        border-radius: 7px;
+        background-color: var(--sec-color);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .LinkedIn{
+        margin-left: 16px;
+        background-color: transparent;
+        border: 2px solid var(--main-color);
+        transition: all 0.3s ease;
+    }
+    .LinkedIn:hover{
+        background-color: var(--sec-color);
+    }
+        
+}
+.main .photo-main{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--sec-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    img{
+        width: 300px;
+        height: 500px;
+        border-radius: 500px;
+        
+    }
+
+}
+.about-me ,
+.main .photo-main{
+    animation: fadeIn 2s ease-out;
+}
+/*end main section styling */
+/* projects section styling */
+.projects{
+    padding: 144px 111px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+    .project-title{
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        font-size: 48px;
+        padding-bottom: 10px;
+    }
+    .project-span{
+        height: 3px;
+        width: 100px;
+        background-color: var(--sec-color);
+        margin-bottom: 80px;
+    } 
+    .container-projects{
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        width: 100%;
+    }
+    .project-details{
+        display: flex;
+        width: 100%;
+        border-radius: 40px;
+        overflow: hidden;
+        background-color: #ffffff;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 480ms ease, transform 480ms ease;
+
+        .project-description{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding-left: 50px;
+            padding-right: 50px;
+            justify-content: center;
+            align-items: flex-start;
+
+            button{
+                padding: 8px 24px;
+                background-color: #ffffff;
+                border-radius: 500px;
+                border: #FDC435 2px solid;
+                transition: all 0.3s ease;
+            }
+            button:hover{
+                background-color: var(--sec-color);
+            }
+        }
+        .project-description .project-description-title{
+            font-family: "Playfair Display", serif;
+            font-weight: 700;
+            font-size: 40px;
+        }
+        .project-description p{
+            font-family: "Nunito", sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+
+        .project-photo{
+            width: 50%;
+            img{
+                width: 100%;
+                height: 400px;
+                object-fit:cover;
+                display: block;
+            }
+        }
+    }
+}
+
+/* Shadow + hover for projects container */
+.projects .project-details {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: transform 280ms ease, box-shadow 280ms ease;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+.projects .project-details:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+/* When scrolled into view */
+.project-details.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.project-details.in-view {
+  animation: popIn 2s cubic-bezier(.2,.9,.2,1);
+}
+/*end projects section styling */
+/* footer section styling */
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    .icons{
+        gap: 24px;
+        font-size: 48px;
+        color:var(--main-color) ;
+    }
+
+    p{
+        color: var(--text-color);
+        font-family: "Nunito", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--text-color);
+    }
+}
+/*end footer section styling */
+/* about-me page styling */
+.about-me {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 500px;
+    background-color: var(--sec-color);
+    box-shadow: 0 0 0 12px var(--sec-color);
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.about-me img{
+    width: 400px;
+    height: 400px;
+    border-radius: 500px;
+    object-fit: cover;
+    border: none;
+}
+/*end about-me page styling */
+/* contact page styling */
+.contact{
+    padding: 144px 111px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.contact .contact-title{
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+.contact .contact-span{
+        height: 3px;
+        width: 100px;
+        background-color: var(--sec-color);
+        margin-bottom: 40px;
+}
+.contact form{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 50%;
+
+    input{
+        height: 25px;
+    }
+    textarea{
+        height: 100px;
+    }
+
+
+    label{
+        font-family: "Nunito", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--main-color);
+    }
+
+    button{
+        
+        margin-top: 24px;
+        padding: 12px 24px 12px 24px;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        border-radius: 7px;
+        background-color: var(--sec-color);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+}
+/*end contact page styling */
